@@ -39,7 +39,7 @@ export default class Controls {
     window.localStorage.dogs = JSON.stringify(this.styles)
     setTimeout(() =>{
       this.onSave.classList.remove('on')
-    }, 3000)
+    }, 1500)
   }
 
   setValues() {

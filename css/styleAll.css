@@ -1,0 +1,155 @@
+/* reset */
+body, h1, h2, p, ul, li, button, main, span, footer {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  color: #222;
+}
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: flex;
+  height: 300px;
+  object-fit: contain;
+  border: 6px solid rgba(0, 0, 0, 0.9);
+  border-radius: 4px;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  margin: 5px;
+}
+@media screen and (max-width: 430px) {
+  img {
+    width: 280px;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+/* estilos gerais */
+h1 {
+  font-family: "Roboto", Helvetica, sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff
+
+}
+p {
+  font-family: "Roboto", Helvetica, sans-serif;
+  font-size: 1.1rem;
+  color: rgba(0, 0, 0, 0.9)
+}
+select, #backgroundColor {
+  width: 400px;
+  font-family: "Roboto", Helvetica, sans-serif;
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.9);
+  font-weight: bold;
+  padding: 7px;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+  margin: 15px 0 15px 0;
+}
+@media screen and (max-width: 430px) {
+  select, #backgroundColor {
+    width: 220px;
+  }
+}
+#backgroundColor {
+  padding: 3px;
+}
+
+h2 {
+  width: 400px;
+  padding: 15px;
+  text-align: center;
+  border: 6px solid rgba(0, 0, 0, 0.9);
+  border-radius: 4px;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+  margin: -3px 5px 5px 5px;
+}
+@media screen and (max-width: 430px) {
+  h2 {
+    width: 280px;
+  }
+}
+
+
+button {
+  padding: 8px;
+  text-align: center;
+  font-family: "Roboto", Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #fff;
+  background: #4785b6;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+}
+button:hover {
+  transform: scale(1.1);
+  color: #b8dfff;
+}
+
+/* grid */
+main {
+  display: grid;
+  grid-template-columns: 150px 1fr 1fr 150px;
+  justify-content: center;
+  overflow-x: hidden;
+}
+header {
+  grid-column: 1 / -1;
+}
+.history {
+  grid-column: 2 / -2;
+}
+
+.fieldSearch {
+  grid-column: 2 / -2; 
+}
+.dogsSelect {
+  grid-column: 2;
+}
+#controles {
+  grid-column: 3;
+}
+footer {
+  grid-column: 1 / -1;
+}
+
+@media screen and (max-width: 880px) {
+  main {
+    grid-template-columns:  1fr;
+    justify-content: center;
+    align-items: center;
+  }
+  .history {
+    grid-column: 1 ;
+  }
+  .fieldSearch {
+    grid-column: 1 ; 
+  }
+  .dogsSelect {
+    grid-column: 1;
+  }
+  #controles {
+    grid-column: 1;
+  }
+}

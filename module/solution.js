@@ -1,10 +1,11 @@
 export default class Solution {
-  constructor(seletor, tagImage, searchField, search, load, url) {
+  constructor(seletor, tagImage, searchField, search, load, url, displayNameDog) {
     this.seletor = document.querySelector(seletor)
     this.tagImage = document.querySelector(tagImage)
     this.searchField = document.querySelector(searchField)
     this.search = document.querySelector(search)
     this.load = document.querySelector(load)
+    this.displayNameDog = document.querySelector(displayNameDog)
     this.url = url
   }
 
@@ -58,6 +59,7 @@ export default class Solution {
         const responseJSON = await response.json()
         this.tagImage.setAttribute('src', responseJSON.message)
         this.load.classList.remove('loading')
+        this.displayNameDog.innerText = `${name.toUpperCase()}`
       }; 
     }
     catch(error) {
