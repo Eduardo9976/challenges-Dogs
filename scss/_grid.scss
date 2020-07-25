@@ -1,0 +1,89 @@
+@mixin container {
+  display: grid;
+  grid-template-columns: 10% 1fr 1fr 10%;
+  justify-content: center;
+  gap: 40px;
+  overflow-x: hidden;
+  @include tela(tablet){
+    grid-template-columns: 2% 1fr 1fr 2%;
+  }
+  @include tela(mobile) {
+    grid-template-columns: 1fr;
+  }
+
+}
+@mixin grid-full {
+  grid-column: 1 / -1;
+  text-align: center;
+  background-image: $background-color;
+}
+@mixin grid-1 {
+  grid-column: 1;
+}
+@mixin grid-2-3 {
+  grid-column: 2 / -2;
+}
+@mixin grid-2 {
+  grid-column: 2;
+}
+@mixin grid-3 {
+  grid-column: 3;
+}
+@mixin mobile {
+  grid-column: 1;
+  margin: 0 15px;
+}
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-content: flex-start;
+}
+
+@mixin tela($size) {
+  @if $size == tablet {
+    @media screen and (max-width: 888px) {
+      @content;
+    }
+  } @else if $size == mobile {
+    @media screen and (max-width: 500px) {
+      @content;
+    }
+  }
+}
+
+main {
+  @include container();
+}
+header {
+  @include grid-full();
+}
+.history {
+  @include grid-2-3();
+  @include tela(mobile) {
+    @include mobile()
+  }
+}
+
+.searchAndImg{
+  align-self: flex-start;
+  @include grid-2();
+  text-align: center;
+  @include flex();
+  @include tela(mobile) {
+    @include mobile()
+  }
+}
+
+#controles {
+  @include grid-3;
+  @include flex();
+  align-items: flex-start;
+  @include tela(mobile) {
+    @include mobile()
+  }
+}
+footer {
+  @include grid-full();
+}

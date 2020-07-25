@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="./img/ico.png" sizes="16x16" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/styles.css">
   <title>Dogs</title>
 </head>
 <body>
@@ -19,35 +19,36 @@
       <p>A grande diversidade de raças de cachorro que existe hoje é resultado de cruzamentos feitos pelo homem. Muitas delas foram criadas na busca por cachorros que correspondessem a características físicas específicas e com uma personalidade adequada à função que deveriam desempenhar. Ao longo de 100 mil anos, quando surgiu o cachorro, descendente do lobo cinzento, as cruzas resultaram em mais de 400 raças de cachorro. conheça aqui algumas dessas raças.</p>
     </div>
 
-    <div class="fieldSearch">
-      <input type="text" 
-           placeholder="Digite o nome da raça" 
-           class="searchField">
+    <div class="searchAndImg">
+      <div class="fieldSearch">
+        <input type="text" 
+             placeholder="Digite o nome" 
+             class="searchField">
+    
+        <button class="search">Buscar</button>
+      </div> 
+    
+        <div class="dogsSelect"> 
+          <p> Para maior comodidade: </p>
+          <select name="dogs" id="dogs">
+            <option value="" 
+                    disabled 
+                    selected> Escolha uma Raça 
+            </option>
+          </select>
   
-      <button class="search">Buscar</button>
-    </div>
-  
-    <div class="dogsSelect"> 
-      <span><b> Para maior comodidade: </b></span>
-      <select name="dogs" id="dogs">
-        <option value="" 
-                disabled 
-                selected> Escolha uma Raça 
-        </option>
-      </select>
-
-      <div class="load">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+          <div class="load">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        <img class="image" 
+             src="./img/dogs.jpg" 
+             alt="Raça">
+    
+        <h2 class="dogName">PETS</h2> 
       </div>
-  
-      <img class="image" 
-           src="./img/dogs.jpg" 
-           alt="Raça">
-  
-      <h2 class="dogName">PETS</h2> 
     </div>
   
     <form id="controles">
@@ -55,7 +56,7 @@
            src="./img/dogHouse.svg" 
            alt="Casinha de cachorro">
   
-      <span><b> Personalize o nome da foto </b></span>
+      <p> Personalize o nome da foto: </p>
       <select name="color" id="color">
         <option value="" 
         disabled 
@@ -68,7 +69,7 @@
         <option value="green"> Verde </option>
       </select>
   
-      <label for="backgroundColor">Cor de fundo</label>
+      <p>Cor de fundo: </p>
       <input type="color" name="backgroundColor" id="backgroundColor">
   
       <select name="fontFamily" id="fontFamily">
@@ -83,13 +84,11 @@
       </select>
   
       <button class="save"> gravar </button>
-  
+      <span class="onSave">Salvo com sucesso!!</span>
     </form>
   
-    <span class="onSave">Salvo com sucesso!!</span>
-
     <footer>
-      <p>Eduardo Fernandes</p>
+      <h1>Eduardo Fernandes</h1>
     </footer>
 
     <script type="module" src="script.js"></script>
