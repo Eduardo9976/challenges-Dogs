@@ -5,18 +5,29 @@ body, h1, h2, p, ul, li, select, input, button, main, span, footer {
   margin: 0px;
   padding: 0px;
 }
+
 * {
   box-sizing: border-box;
 }
+
 ul {
   list-style: none;
 }
+
 a {
   text-decoration: none;
 }
+
 img {
   max-width: 100%;
   border-radius: 4px;
+}
+
+header {
+  @include header-adjustment();
+  @include tela(mobile) {
+    @include header-adjustment-mobile();
+  }
 }
 
 p {
@@ -25,6 +36,7 @@ p {
     @include type-1(16)
   }
 }
+
 button {
   @include button-style();
   &:hover {
@@ -32,6 +44,7 @@ button {
     color: $main-darken-color
   }
 }
+
 header h1, footer h1 {
   @include type-2(30);
   color: $white;
@@ -67,6 +80,7 @@ select, input {
   border: 1px solid $black-lighten-color;
   margin-bottom: 15px;
 }
+
 #controles p, .dogsSelect p {
   text-indent: 0;
   font-weight: bold;
@@ -75,6 +89,7 @@ select, input {
     @include line()
   }
 }
+
 input[type="color"] {
   padding: 3px;
 }
@@ -89,12 +104,15 @@ input[type="color"] {
   flex: 1;
   display: flex;
 }
+
 .fieldSearch input[type="text"] {
   height: 45px;
 }
+
 .dogName {
   border: 2px solid $black-color;
 }
+
 .loading span {
   display: inline-block;
   width: 10px;
@@ -129,7 +147,6 @@ input[type="color"] {
     transform: translate3d(0, 30px, 0);
   }
 }
-
 
 .onSave {
   display: none;

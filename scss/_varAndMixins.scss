@@ -1,5 +1,5 @@
 $main-color: #4785b6;
-$main-lighten-color: lighten($main-color, 15%);
+$main-lighten-color: lighten($main-color, 70%);
 $main-darken-color: darken($main-color, 15%);
 
 $black-color: rgba(0, 0, 0, 0.8);
@@ -14,10 +14,26 @@ $font-2: Helvetica, sans-serif;
 @function em($pixel, $context: 16) {
   @return $pixel / $context +em;
 }
+
 @mixin background {
-  background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(44,106,155,1));
-  background-image: -webkit-linear-gradient(right, rgba(255,0,0,0), rgba(44,106,155,1));
+  background-image: linear-gradient(to right, $main-lighten-color, rgba(44,106,155,1));
+  background-image: -webkit-linear-gradient(right, $main-lighten-color, rgba(44,106,155,1));
 }
+
+@mixin header-adjustment {
+  margin-top: 40px;
+  @include background;
+  border-top-left-radius: 50px 20px;
+  border-bottom-left-radius: 50px 20px;
+}
+
+@mixin header-adjustment-mobile {
+  text-align: center;
+  margin-top: 0;
+  border-top-left-radius: 0 0;
+  border-bottom-left-radius: 0 0;
+}
+
 @mixin type-1($size) {
   font-family: $font-2;
   text-align: justify;
@@ -52,6 +68,7 @@ $font-2: Helvetica, sans-serif;
     line-height: em(30,24);
   }
 }
+
 @mixin shadow {
   box-shadow: 2px 2px $black-lighten-color;
 }

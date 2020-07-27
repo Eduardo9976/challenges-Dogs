@@ -19,10 +19,16 @@ main {
 }
 
 header {
-  grid-column: 1 / -1;
-  text-align: center;
-  background-image: linear-gradient(to right, rgba(255, 0, 0, 0), #2c6a9b);
-  background-image: -webkit-linear-gradient(right, rgba(255, 0, 0, 0), #2c6a9b);
+  grid-column: 3 / -1;
+}
+
+@media screen and (max-width: 500px) {
+  header {
+    grid-column: 1 / -1;
+    text-align: center;
+    background-image: linear-gradient(to right, white, #2c6a9b);
+    background-image: -webkit-linear-gradient(right, white, #2c6a9b);
+  }
 }
 
 .history {
@@ -74,8 +80,8 @@ header {
 footer {
   grid-column: 1 / -1;
   text-align: center;
-  background-image: linear-gradient(to right, rgba(255, 0, 0, 0), #2c6a9b);
-  background-image: -webkit-linear-gradient(right, rgba(255, 0, 0, 0), #2c6a9b);
+  background-image: linear-gradient(to right, white, #2c6a9b);
+  background-image: -webkit-linear-gradient(right, white, #2c6a9b);
 }
 
 body, h1, h2, p, ul, li, select, input, button, main, span, footer {
@@ -98,6 +104,23 @@ a {
 img {
   max-width: 100%;
   border-radius: 4px;
+}
+
+header {
+  margin-top: 40px;
+  background-image: linear-gradient(to right, white, #2c6a9b);
+  background-image: -webkit-linear-gradient(right, white, #2c6a9b);
+  border-top-left-radius: 50px 20px;
+  border-bottom-left-radius: 50px 20px;
+}
+
+@media screen and (max-width: 500px) {
+  header {
+    text-align: center;
+    margin-top: 0;
+    border-top-left-radius: 0 0;
+    border-bottom-left-radius: 0 0;
+  }
 }
 
 p {
