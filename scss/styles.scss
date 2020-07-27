@@ -1,5 +1,5 @@
-@import "colors";
-@import "grid";
+@import "_varAndMixins";
+@import "_grid";
 
 body, h1, h2, p, ul, li, select, input, button, main, span, footer {
   margin: 0px;
